@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ID=$(xinput | awk -F'id=' '/Touch/ {print $2}' | awk '{print $1}')
+ID_TAP=$(xinput list-props "${ID}" | awk -F'[()]' '/Tapping Enabled \(/ {print $2}')
+
+xinput set-prop "${ID}" "${ID_TAP}" 1
