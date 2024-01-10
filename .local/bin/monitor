@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# possible positions for place monitor
+POS="above\nbelow\nleft-of\nright-of"
+
+# select primary monitor(cannot be moved)
+PRIMARY_MON=$(xrandr --query | grep '\bconnected' | awk '{print $1}' | dmenu -i -p "Choose primary monitor:")
+
+# check if primary monitor has been choosen
+[ -z "${PRIMARY_MON}" ] && xrandr --auto && exit 1
+
+# select primary monitor(can be moved)
+SECONDARY_MON=$(xrandr --query | grep '\bconnected' | awk -v var="${PRIMARY_MON}" '$1!=var {print $1}' | dmenu -i -p "Choose secondary monitor: ")
+
+# check if secondary monitor has been choosen
+[ -z "${SECONDARY_MON}" ] && xrandr --auto && exit 1
+
+# select position for placeing secondary monitor
+POSD=$(echo -e "${POS}" | dmenu -i -p "Where display ${SECONDARY_MON}:")
+
+# check if position has been choosen
+[ -z "${POSD}" ] && xrandr --auto && exit 1
+
+# apply changes
+xrandr --auto && xrandr --output "${SECONDARY_MON}" --"${POSD}" "${PRIMARY_MON}"
