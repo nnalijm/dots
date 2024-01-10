@@ -1,0 +1,50 @@
+# CHANGE TITLES
+articlelist-format 			"  %D    %t"
+articlelist-title-format	"%T (%u unread, %t total)"
+auto-reload 				yes
+datetime-format 			"%d %b %y"
+feedlist-title-format 		"Feeds (%u unread, %t total)"
+itemview-title-format 		""
+
+
+# NOTIFICATIONS
+notify-always 				yes
+notify-beep 				yes
+notify-format 				"%d new articles (%n unread articles, %f unread feeds)"
+notify-program 				/usr/bin/notify-send
+
+# BINDS
+bind-key l open
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key G end
+bind-key g home
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key U show-urls
+
+# COLORS
+color background         white   	black
+color listnormal         default   	black
+color listnormal_unread  default   	black		bold
+color listfocus          yellow		black		bold
+color listfocus_unread   yellow  	black 		bold
+color info               white	   	black
+color article            white		black
+
+# MACROS
+browser "chromium %u"
+macro y set browser "tsp main.sh %u" ; open-in-browser; set browser "chromium %u"
+macro c open-in-browser
+macro m set browser "mpv %u"; open-in-browser; set browser "chromium %u"
+
+# HIGHLIGHT
+highlight feedlist "---.*---.*" yellow default bold
+highlight feedlist ".*0/0)." black default invis
+highlight article "^Feed.*" white black bold
+highlight article "^Title.*" white black bold
+highlight article "^Author.*" white black bold
+highlight article "^Date.*" white black bold
+highlight article "http.*" cyan black bold
