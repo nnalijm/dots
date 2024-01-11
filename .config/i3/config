@@ -143,7 +143,7 @@ bindsym --release Mod1+x exec slock
 # Window Compositor 
 exec_always picom -f
 
-exec_always --no-startup-id touch.sh
+exec_always --no-startup-id enable_touch
 
 # Wallpaper
 exec_always feh --no-fehbg --bg-fill $HOME/Pictures/wallpaper1.jpg
@@ -158,4 +158,4 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1
 
 for_window [class="^.*"] border pixel 2
 
-bindsym --release Mod1+c exec monitor.sh
+bindsym --release Mod1+c exec monitor
