@@ -17,7 +17,7 @@ To simplify the use of the script the following line might be used in configurat
 bindsym --release Mod1+c exec monitor
 ```
 
-## tordd
+## toradd
 
 The script adds a new torrent file to the queue and sends notifications using notify-send.
 
