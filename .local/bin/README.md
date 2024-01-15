@@ -5,9 +5,9 @@
 - [toradd](#toradd)
 - [tordone](#tordone)
 
-## [enable_touch]
+## enable_touch
 
-## [monitor]
+## monitor
 
 *Monitor* script allows manipulation with connected monitors. Script uses dmenu as a menu for selectiong monitors and positions for their displaying.
 
@@ -17,7 +17,7 @@ To simplify the use of the script the following line might be used in configurat
 bindsym --release Mod1+c exec monitor
 ```
 
-## [tordd]
+## tordd
 
 The script adds a new torrent file to the queue and sends notifications using notify-send.
 
@@ -25,7 +25,7 @@ The script adds a new torrent file to the queue and sends notifications using no
 transmission-remote -a "#{@}" && notify-send "Transmission status" "Torrent added"
 ```
 
-## [tordone]
+## tordone
 
 Script runs every time torrent is downloaded.
 
