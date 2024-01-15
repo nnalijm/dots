@@ -19,4 +19,17 @@ bindsym --release Mod1+c exec monitor
 
 ## [tordd]
 
+The script adds a new torrent file to the queue and sends notifications using notify-send.
+
+```bash
+transmission-remote -a "#{@}" && notify-send "Transmission status" "Torrent added"
+```
+
 ## [tordone]
+
+Script runs every time torrent is downloaded.
+
+
+```bash
+notify-send "Transmission status" "Torrent ${TR_TORRENT_NAME} has been downloaded successfully"
+```
