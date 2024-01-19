@@ -1,3 +1,3 @@
 #!/bin/bash
 
-notify-send "Transmission status" "Torrent ${TR_TORRENT_NAME} has been downloaded successfully"
+notify-send -i "$HOME/.config/dunst/icons/done.png" "Transmission status" "Torrent ${TR_TORRENT_NAME} has been downloaded successfully"
