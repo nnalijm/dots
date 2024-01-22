@@ -7,6 +7,15 @@
 
 ## enable_touch
 
+Script enables touchpad on laptop.
+
+```bash
+ID=$(xinput | awk -F'id=' '/Touch/ {print $2}' | awk '{print $1}')
+ID_TAP=$(xinput list-props "${ID}" | awk -F'[()]' '/Tapping Enabled \(/ {print $2}')
+
+xinput set-prop "${ID}" "${ID_TAP}" 1
+```
+
 ## monitor
 
 *Monitor* script allows manipulation with connected monitors. Script uses dmenu as a menu for selectiong monitors and positions for their displaying.
